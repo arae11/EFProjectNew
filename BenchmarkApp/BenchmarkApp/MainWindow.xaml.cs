@@ -43,6 +43,7 @@ namespace BenchmarkApp
             var userCheck = userManager.LogInCheck(username, password);
             if (userCheck == true)
             {
+                UserManager.CurrentUsername = username;
                 HomePage sendToHome = new HomePage();
                 sendToHome.Show();
                 this.Close();

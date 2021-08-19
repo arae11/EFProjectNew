@@ -25,25 +25,17 @@ namespace BenchmarkWPF
             InitializeComponent();
         }
 
-        private void btnVisualMemory_Click(object sender, RoutedEventArgs e)
+        private void btnEasy_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Press 'New' if the word on the screen hasn't appeared before. Press 'Seen' if it has. If you press the wrong answer 3 times the game is over.");
             VisualMemory goToVisual = new VisualMemory();
             goToVisual.Show();
             this.Close();
         }
 
-        private void btnNumberMemory_Click(object sender, RoutedEventArgs e)
+        private void btnHard_Click(object sender, RoutedEventArgs e)
         {
-            NumberMemory goToNumber = new NumberMemory();
-            goToNumber.Show();
-            this.Close();
-        }
-
-        private void btnArithmeticTest_Click(object sender, RoutedEventArgs e)
-        {
-            ArithmeticTest goToArithmetic = new ArithmeticTest();
-            goToArithmetic.Show();
+            VisualMemory goToVisual = new VisualMemory();
+            goToVisual.Show();
             this.Close();
         }
 

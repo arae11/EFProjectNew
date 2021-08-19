@@ -1,8 +1,10 @@
-﻿using System;
+﻿using BenchmarkBusiness;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace BenchmarkWPF
 {
@@ -12,7 +14,22 @@ namespace BenchmarkWPF
         public int lives = 3;
         public int score = 0;
 
-        private string WordBank()
+        private ScoreManager _sm = new ScoreManager();
+
+        private string WordBankEasy()
+        {
+            string[] array = new string[]
+            { "PEACE", "PLUG", "DRIVE", "RALLY", "PIE", "WASTE", "DASH", "MINE", "BLAME", "BED",
+              "CAKE", "CREW", "PAPER", "CONGO", "GATE", "PAIR", "COPY", "STOOL", "GOWN", "PULL",
+              "PUNCH", "MUGGY", "BERRY", "POLE", "BOLD", "DREAM", "CLOSE", "HELP", "MONTH", "VAIN",
+              "EVEN", "JAM", "CRAFT", "RICE", "SPY", "CHORD", "LIMIT", "BELT", "CROWD", "FENCE",
+              "CAFE", "BRAID", "STOOP", "STOP", "SLUMP", "BACK", "CUP", "SNAP", "ROB", "WEST"};
+            Random rng = new Random();
+            int word = rng.Next(0, 50);
+            return array[word];
+        }
+
+        private string WordBankHard()
         {
             string[] array = new string[]
             { "OVERLOOK", "CURRENT", "DISCIPLINE", "TELEPHONE", "CONTRARY", "AMPUTATE", "CONFIDENCE", "EXECUTE", "SKELETON", "PRIMARY",
@@ -25,11 +42,23 @@ namespace BenchmarkWPF
             return array[word];
         }
 
-        public string NewWord()
+        public string NewWordEasy()
         {
-            var newWord = WordBank();
-            return newWord;
+            var newWordE = WordBankEasy();
+            return newWordE;
         }
+
+        public string NewWordHard()
+        {
+            var newWordH = WordBankHard();
+            return newWordH;
+        }
+
+        //public bool Difficulty()
+        //{
+            
+        //}
+
 
         public void IncreaseScore()
         {
@@ -41,14 +70,16 @@ namespace BenchmarkWPF
             lives--;
         }
 
-        public Boolean GameOver()
+        public bool GameOver(string username)
         {
             if (lives == 0)
             {
+                _sm.UpdateScore(username, score);
                 return true;
             }
             return false;
         }
+
 
     }
 }

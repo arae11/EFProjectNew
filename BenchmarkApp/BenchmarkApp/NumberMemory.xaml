@@ -39,14 +39,7 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="btnLogout" 
-                Grid.Row="0" 
-                Grid.Column="11" 
-                Grid.ColumnSpan="2" 
-                Background="#801515" 
-                Content="Logout" 
-                Click="btnLogout_Click" FontFamily="TYPOGRAPH PRO" Foreground="White"/>
-        <Label x:Name="lblInput" 
+        <TextBox x:Name="tbxInput" 
                  Grid.Row="5" 
                  Grid.RowSpan="4" 
                  Grid.Column="1" 

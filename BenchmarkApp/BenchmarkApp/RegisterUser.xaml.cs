@@ -26,6 +26,13 @@ namespace BenchmarkWPF
             InitializeComponent();
         }
 
+        private void BackToLogin()
+        {
+            MainWindow returnToMain = new MainWindow();
+            returnToMain.Show();
+            this.Close();
+        }
+
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             var userManager = new UserManager();
@@ -44,17 +51,13 @@ namespace BenchmarkWPF
             {
                 userManager.CreateUser(username, password);
                 MessageBox.Show("Account creation successful");
-                MainWindow returnToMain = new MainWindow();
-                returnToMain.Show();
-                this.Close();
+                BackToLogin();
             }
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow returnToMain = new MainWindow();
-            returnToMain.Show();
-            this.Close();
+            BackToLogin();
         }
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BenchmarkBusiness;
 
 namespace BenchmarkWPF
 {
@@ -20,10 +21,14 @@ namespace BenchmarkWPF
     public partial class VisualMemory : Window
     {
         private VisualMemoryManager _vmm;
+        private ScoreManager _sm;
+
+        private string username;
+        private int score;
         
-        private void GameOver()
+        private void GameOver(string username)
         {
-            if (_vmm.GameOver() == true) 
+            if (_vmm.GameOver(username) == true) 
             {
                 MessageBox.Show("Game Over");
                 ScoreScreen();
@@ -47,8 +52,10 @@ namespace BenchmarkWPF
         public VisualMemory()
         {
             InitializeComponent();
+            username = UserManager.CurrentUsername;
             _vmm = new VisualMemoryManager();
-            tbxWord.Text = _vmm.NewWord();
+            _sm = new ScoreManager();
+            tbxWord.Text = _vmm.NewWordEasy();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -66,10 +73,10 @@ namespace BenchmarkWPF
             {
                 _vmm.DecreaseLives();
             }
-            tbxWord.Text = _vmm.NewWord();
+            tbxWord.Text = _vmm.NewWordEasy();
             lblScore.Content = $"Score: {_vmm.score}";
             lblLives.Content = $"Lives: {_vmm.lives}";
-            GameOver();
+            GameOver(username);
         }
 
         private void btnNew_Click(object sender, RoutedEventArgs e)
@@ -83,10 +90,10 @@ namespace BenchmarkWPF
                 _vmm.DecreaseLives();
             }
             _vmm.seenWords.Add(tbxWord.Text);
-            tbxWord.Text = _vmm.NewWord();
+            tbxWord.Text = _vmm.NewWordEasy();
             lblScore.Content = $"Score: {_vmm.score}";
             lblLives.Content = $"Lives: {_vmm.lives}";
-            GameOver();
+            GameOver(username);
         }
 
         private void tbxWord_TextChanged(object sender, TextChangedEventArgs e)

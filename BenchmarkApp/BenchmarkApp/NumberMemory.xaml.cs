@@ -19,14 +19,46 @@ namespace BenchmarkWPF
     /// </summary>
     public partial class NumberMemory : Window
     {
+        public int score = 0;
+        
+        private string Level(int lvl)
+        {
+            
+            Random rng = new Random();
+            int number = rng.Next(10^(lvl-1), 10^lvl);
+            return number.ToString();
+        }
+        
+        private void Answer()
+        {
+            int level = 1;
+            while (true)
+            {
+                string storedNumber = Level(level);
+                lblDisplay.Content = storedNumber;
+                if (tbxInput.Equals(storedNumber))
+                {
+                    score++;
+                    level++;
+                }
+                else
+                {
+                    // put score into database
+                    Console.WriteLine(score);
+                    break;
+                }
+            }
+        }
+
+
+
+
+
+
         public NumberMemory()
         {
             InitializeComponent();
-        }
-
-        private void btnLogout_Click(object sender, RoutedEventArgs e)
-        {
-
+            
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -38,7 +70,7 @@ namespace BenchmarkWPF
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-
+            Answer();
         }
     }
 }

@@ -111,6 +111,7 @@ namespace BenchmarkBusiness
             }
         }
 
+        public static string CurrentUsername { get; set; }
         
     }
 }

@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:BenchmarkWPF"
         mc:Ignorable="d"
         Title="Scores" Height="450" Width="800">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -40,7 +41,7 @@
 
         <Button x:Name="btnBack" 
                 Grid.Row="0" 
-                Grid.Column="0" 
+                Grid.Column="10" 
                 Grid.ColumnSpan="2" 
                 Background="#801515" 
                 Content="Back" 

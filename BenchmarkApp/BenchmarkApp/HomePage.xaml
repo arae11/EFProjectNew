@@ -40,30 +40,50 @@
         </Grid.ColumnDefinitions>
 
 
-        <Button x:Name="btnVisualMemory" 
-                Grid.Row="5" 
-                Grid.RowSpan="4" 
+        <Button x:Name="btnVisualMemoryEasy" 
+                Grid.Row="4" 
+                Grid.RowSpan="5" 
                 Grid.Column="1" 
-                Grid.ColumnSpan="3" 
+                Grid.ColumnSpan="5" 
                 Background="#801515" 
-                Content="Visual Memory" 
-                Click="btnVisualMemory_Click" FontFamily="TYPOGRAPH PRO" Foreground="White"/>
-        <Button x:Name="btnNumberMemory" 
-                Grid.Row="5" 
-                Grid.RowSpan="4" 
-                Grid.Column="5" 
-                Grid.ColumnSpan="3" 
+                Content="Easy" 
+                Click="btnEasy_Click" FontFamily="TYPOGRAPH PRO" Foreground="White" Margin="0,31,61,0"/>
+
+        <Button x:Name="btnVisualMemoryHard" 
+                Grid.Row="4" 
+                Grid.RowSpan="5"
+                Grid.Column="7" 
+                Grid.ColumnSpan="5" 
                 Background="#801515" 
-                Content="Number Memory" 
-                Click="btnNumberMemory_Click" FontFamily="TYPOGRAPH PRO" Foreground="White"/>
-        <Button x:Name="btnArithmeticTest" 
-                Grid.Row="5" 
-                Grid.RowSpan="4"
-                Grid.Column="9" 
-                Grid.ColumnSpan="3" 
-                Background="#801515" 
-                Content="Arithmetic Test" 
-                Click="btnArithmeticTest_Click" FontFamily="TYPOGRAPH PRO" Foreground="White"/>
+                Content="Hard" 
+                Click="btnHard_Click" FontFamily="TYPOGRAPH PRO" Foreground="White" Margin="61,31,0,0"/>
+
+        <TextBox x:Name="tbxDifficulty" 
+                 Grid.Row="1" 
+                 Grid.RowSpan="3" 
+                 Grid.Column="3" 
+                 Grid.ColumnSpan="7" 
+                 FontSize="18" 
+                 TextAlignment="Center" 
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 Text="Select Difficulty"
+                 FontFamily="TYPOGRAPH PRO"
+                 Background="#FFDCD0D0" Margin="0,31,0,0"  />
+
+        <TextBox x:Name="tbxInstructions" 
+                 Grid.Row="9" 
+                 Grid.RowSpan="2" 
+                 Grid.Column="2" 
+                 Grid.ColumnSpan="8" 
+                 FontSize="18" 
+                 TextAlignment="Center" 
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 Text="Instructions:"
+                 FontFamily="TYPOGRAPH PRO"
+                 Background="#FFDCD0D0" Margin="61,31,0,0"  />
+
         <Button x:Name="btnLogout" 
                 Grid.Row="0" 
                 Grid.Column="0" 
@@ -71,6 +91,7 @@
                 Background="#801515" 
                 Content="Logout" 
                 Click="btnLogout_Click" FontFamily="TYPOGRAPH PRO" Foreground="White"/>
+
         <Button x:Name="btnScores" 
                 Grid.Row="0" 
                 Grid.Column="11" 
@@ -78,5 +99,17 @@
                 Background="#801515" 
                 Content="Scores" 
                 Click="btnScores_Click" FontFamily="TYPOGRAPH PRO" Foreground="White"/>
+
+        <TextBlock x:Name="tbxInstructionsDescription" 
+            Grid.Row="10" 
+            Grid.RowSpan="3" 
+            Grid.Column="2" 
+            Grid.ColumnSpan="8" 
+            FontSize="16" 
+            TextAlignment="Center"
+            TextWrapping="WrapWithOverflow"
+            Text="Press 'New' if the word on the screen hasn't appeared before. Press 'Seen' if it has. If you press the wrong answer 3 times the game is over."
+            FontFamily="TYPOGRAPH PRO"
+            Background="#FFDCD0D0" Margin="61,31,0,0"  />
     </Grid>
 </Window>
