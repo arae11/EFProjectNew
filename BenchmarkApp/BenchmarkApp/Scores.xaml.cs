@@ -23,15 +23,12 @@ namespace BenchmarkWPF
         private ScoreManager _sM = new ScoreManager();
         private UserManager _uM = new UserManager();
 
-        private void PopulateLeaderboard()
-        {
-            ScoreBox.ItemsSource = _uM.RetrieveAll();
-        }
-
         public Scores()
         {
             InitializeComponent();
-            PopulateLeaderboard();
+            _sM = new ScoreManager();
+            var list = ScoreManager.PopulateLeaderboard();
+            ScoreBox.ItemsSource = list;
         }
 
         
@@ -42,15 +39,7 @@ namespace BenchmarkWPF
             returnToHome.Show();
             this.Close();
         }
+        
 
-        private void ScoreBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (ScoreBox.SelectedItem != null)
-            {
-                _uM.SetSelectedUser(ScoreBox.SelectedItem);
-                PopulateLeaderboard();
-            }
-
-        }
     }
 }

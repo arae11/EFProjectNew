@@ -41,6 +41,31 @@ namespace BenchmarkBusiness
             }
         }
 
-        
+        public class ScoreQuery
+        {
+            public virtual string Username { get; set; }
+            public virtual int NewScore { get; set; }
+            public virtual int HighScore { get; set; }
+
+            public override string ToString()
+            {
+                return $"{Username} {NewScore} {HighScore}";
+            }
+        }
+
+        public static List<ScoreQuery> PopulateLeaderboard()
+        {
+            using (var db = new BenchmarkContext())
+            {
+                var scoreQuery =
+                    from s in db.Scores
+                    join u in db.Users on s.User.UserId equals u.UserId
+                    where s.NewScore != null
+                    select new ScoreQuery { Username = s.User.Username, NewScore = s.NewScore, HighScore = s.HighScore };
+                return scoreQuery.ToList();
+            }
+        }
+
+
     }
 }

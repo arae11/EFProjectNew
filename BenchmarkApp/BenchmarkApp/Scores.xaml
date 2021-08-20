@@ -7,49 +7,63 @@
         mc:Ignorable="d"
         Title="Scores" Height="450" Width="800">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
 
+
+
+    <!--<StackPanel>
         <Button x:Name="btnBack" 
-                Grid.Row="0" 
-                Grid.Column="10" 
-                Grid.ColumnSpan="2" 
                 Background="#801515" 
                 Content="Back" 
-                Click="btnBack_Click" FontFamily="TYPOGRAPH PRO" Foreground="White"/>
-        <ListBox x:Name="ScoreBox" 
-                 Grid.Row="1" 
-                 Grid.RowSpan="13" 
-                 Grid.Column="0" 
-                 Grid.ColumnSpan="12" SelectionChanged="ScoreBox_SelectionChanged" />
-    </Grid>
+                Click="btnBack_Click" FontFamily="TYPOGRAPH PRO" Foreground="White" Height="70"/>
+        <Separator/>
+        <Label x:Name="Leaderboard" Foreground="Black" FontFamily="TYPOGRAPH PRO" />
+        <Grid Height="59">
+            <ListBox x:Name="ScoreBox" Grid.Column="0" SelectionChanged="ScoreBox_SelectionChanged" Margin="0,66,0,0" />
+        </Grid>
+    </StackPanel>-->
+
+
+    <!--<ListView HorizontalAlignment="Center" VerticalAlignment="Top" Name="ScoreBox">
+        <ListView.View>
+            <GridView AllowsColumnReorder="true"
+              ColumnHeaderToolTip="Leaderboard">
+                <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=Username}" 
+                      Header="Username" Width="200"/>
+
+                <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=Newscore}" 
+                      Header="Latest Score" Width="200"/>
+
+                <GridViewColumn DisplayMemberBinding=
+                          "{Binding Path=Highscore}" 
+                      Header="High Score" Width="200"/>
+            </GridView>
+        </ListView.View>
+    </ListView>-->
+    <StackPanel>
+        <Button x:Name="btnBack" 
+                Background="#801515" 
+                Content="Back" 
+                Click="btnBack_Click" FontFamily="TYPOGRAPH PRO" Foreground="White" Height="30" Width="50" HorizontalAlignment="Right"/>
+        <Separator></Separator>
+        <Label Content="Leaderboard" 
+               Foreground="Black" 
+               FontSize="25" 
+               FontFamily="TYPOGRAPH PRO"
+               HorizontalAlignment="Center"/>
+        <Separator></Separator>
+        <ListView Margin="0,10,0,0" 
+                  Height="342" 
+                  HorizontalAlignment="Center" 
+                  Name="ScoreBox" Width="600">
+            <ListView.View>
+                <GridView x:Name="GridView1">
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Username}" Header="Username" Width="200"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=NewScore}" Header="Latest Score" Width="200"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=HighScore}" Header="Highscore" Width="200"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
 </Window>
