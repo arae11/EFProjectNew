@@ -1,11 +1,18 @@
-﻿<Window x:Class="BenchmarkWPF.RegisterUser"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BenchmarkWPF"
-        mc:Ignorable="d"
-        Title="RegisterUser" Height="450" Width="800">
+﻿<Window 
+    x:Class="BenchmarkWPF.RegisterUser"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:BenchmarkWPF"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    mc:Ignorable="d"
+    Title="RegisterUser" 
+    ResizeMode="NoResize"
+    WindowState="Maximized"
+    Height="1920" 
+    Width="1080">
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -43,6 +50,7 @@
                  Grid.RowSpan="1" 
                  Grid.Column="3" 
                  Grid.ColumnSpan="6" 
+                 Text="Enter Username"
                  FontSize="18" 
                  TextAlignment="Center" 
                  HorizontalContentAlignment="Center"
@@ -53,6 +61,7 @@
                  Grid.RowSpan="1" 
                  Grid.Column="3" 
                  Grid.ColumnSpan="6" 
+                 materialDesign:HintAssist.Hint="Password"
                  FontSize="18" 
                  HorizontalContentAlignment="Center"
                  VerticalContentAlignment="Center"

@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BenchmarkWPF"
         mc:Ignorable="d"
-        Title="Scores" Height="450" Width="800">
+        ResizeMode="NoResize"
+        WindowState="Maximized"
+        Title="Scores" Height="1920" Width="1080">
 
 
 
@@ -59,9 +61,15 @@
                   Name="ScoreBox" Width="600">
             <ListView.View>
                 <GridView x:Name="GridView1">
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Username}" Header="Username" Width="200"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=NewScore}" Header="Latest Score" Width="200"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=HighScore}" Header="Highscore" Width="200"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Username}" 
+                                    Header="Username" 
+                                    Width="200"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=NewScore}" 
+                                    Header="Latest Score" 
+                                    Width="200"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=HighScore}" 
+                                    Header="Highscore" 
+                                    Width="200"/>
                 </GridView>
             </ListView.View>
         </ListView>
