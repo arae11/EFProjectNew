@@ -15,4 +15,17 @@
     <ProjectReference Include="..\BenchmarkData\BenchmarkData.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="VerbalMemoryH.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="VerbalMemoryH.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
 </Project>

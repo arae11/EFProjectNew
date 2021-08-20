@@ -15,20 +15,18 @@ using BenchmarkBusiness;
 
 namespace BenchmarkWPF
 {
-    /// <summary>
-    /// Interaction logic for VisualMemory.xaml
-    /// </summary>
-    public partial class VisualMemory : Window
+    public partial class VerbalMemoryH : Window
     {
-        private VisualMemoryManager _vmm;
-        private ScoreManager _sm;
+        private VerbalMemoryManager _vMM;
+        private ScoreManager _sM;
+        
 
         private string username;
         private int score;
         
         private void GameOver(string username)
         {
-            if (_vmm.GameOver(username) == true) 
+            if (_vMM.GameOver(username) == true) 
             {
                 MessageBox.Show("Game Over");
                 ScoreScreen();
@@ -49,13 +47,13 @@ namespace BenchmarkWPF
             this.Close();
         }
 
-        public VisualMemory()
+        public VerbalMemoryH()
         {
             InitializeComponent();
             username = UserManager.CurrentUsername;
-            _vmm = new VisualMemoryManager();
-            _sm = new ScoreManager();
-            tbxWord.Text = _vmm.NewWordEasy();
+            _vMM = new VerbalMemoryManager();
+            _sM = new ScoreManager();
+            tbxWord.Text = _vMM.NewWordHard();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -65,34 +63,34 @@ namespace BenchmarkWPF
 
         private void btnSeen_Click(object sender, RoutedEventArgs e)
         {
-            if (_vmm.seenWords.Contains(tbxWord.Text))
+            if (_vMM.seenWords.Contains(tbxWord.Text))
             {
-                _vmm.IncreaseScore();
+                _vMM.IncreaseScore();
             }
             else
             {
-                _vmm.DecreaseLives();
+                _vMM.DecreaseLives();
             }
-            tbxWord.Text = _vmm.NewWordEasy();
-            lblScore.Content = $"Score: {_vmm.score}";
-            lblLives.Content = $"Lives: {_vmm.lives}";
+            tbxWord.Text = _vMM.NewWordHard();
+            lblScore.Content = $"Score: {_vMM.score}";
+            lblLives.Content = $"Lives: {_vMM.lives}";
             GameOver(username);
         }
 
         private void btnNew_Click(object sender, RoutedEventArgs e)
         {
-            if (!_vmm.seenWords.Contains(tbxWord.Text))
+            if (!_vMM.seenWords.Contains(tbxWord.Text))
             {
-                _vmm.IncreaseScore();
+                _vMM.IncreaseScore();
             }
             else
             {
-                _vmm.DecreaseLives();
+                _vMM.DecreaseLives();
             }
-            _vmm.seenWords.Add(tbxWord.Text);
-            tbxWord.Text = _vmm.NewWordEasy();
-            lblScore.Content = $"Score: {_vmm.score}";
-            lblLives.Content = $"Lives: {_vmm.lives}";
+            _vMM.seenWords.Add(tbxWord.Text);
+            tbxWord.Text = _vMM.NewWordHard();
+            lblScore.Content = $"Score: {_vMM.score}";
+            lblLives.Content = $"Lives: {_vMM.lives}";
             GameOver(username);
         }
 

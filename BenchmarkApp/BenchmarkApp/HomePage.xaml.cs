@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace BenchmarkWPF
 {
-    /// <summary>
-    /// Interaction logic for HomePage.xaml
-    /// </summary>
     public partial class HomePage : Window
     {
         public HomePage()
@@ -27,15 +24,15 @@ namespace BenchmarkWPF
 
         private void btnEasy_Click(object sender, RoutedEventArgs e)
         {
-            VisualMemory goToVisual = new VisualMemory();
-            goToVisual.Show();
+            VerbalMemoryE goToEasy = new VerbalMemoryE();
+            goToEasy.Show();
             this.Close();
         }
 
         private void btnHard_Click(object sender, RoutedEventArgs e)
         {
-            VisualMemory goToVisual = new VisualMemory();
-            goToVisual.Show();
+            VerbalMemoryH goToHard = new VerbalMemoryH();
+            goToHard.Show();
             this.Close();
         }
 

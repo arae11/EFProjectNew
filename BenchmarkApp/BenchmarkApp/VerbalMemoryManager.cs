@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace BenchmarkWPF
 {
-    class VisualMemoryManager
+    class VerbalMemoryManager
     {
         public List<string> seenWords = new List<string>();
         public int lives = 3;
         public int score = 0;
 
-        private ScoreManager _sm = new ScoreManager();
+        private ScoreManager _sM = new ScoreManager();
 
         private string WordBankEasy()
         {
@@ -23,7 +23,7 @@ namespace BenchmarkWPF
               "CAKE", "CREW", "PAPER", "CONGO", "GATE", "PAIR", "COPY", "STOOL", "GOWN", "PULL",
               "PUNCH", "MUGGY", "BERRY", "POLE", "BOLD", "DREAM", "CLOSE", "HELP", "MONTH", "VAIN",
               "EVEN", "JAM", "CRAFT", "RICE", "SPY", "CHORD", "LIMIT", "BELT", "CROWD", "FENCE",
-              "CAFE", "BRAID", "STOOP", "STOP", "SLUMP", "BACK", "CUP", "SNAP", "ROB", "WEST"};
+              "CAFE", "BRAID", "STOOP", "STOP", "SLUMP", "BACK", "CUP", "SNAP", "ROB", "WEST" };
             Random rng = new Random();
             int word = rng.Next(0, 50);
             return array[word];
@@ -36,7 +36,7 @@ namespace BenchmarkWPF
               "RECESSION", "MARRIAGE", "REHEARSAL", "CONGRESS", "CUCUMBER", "EARTHFLAX", "NEGLIGENCE", "SANCTUARY", "CATHEDRAL", "EXPRESS",
               "FEDERATION", "CATEGORY", "PRESSURE", "WILDERNESS", "GRIMACE", "SENTIMENT", "HARMONY", "RUBBISH", "MENTION", "FLOURISH",
               "CONSUMPTION", "CHANNEL", "GIRLFRIEND", "OPERATIONAL", "ABSORPTION", "ADSORPTION", "SPECIMEN", "EXCITEMENT", "CAMPAIGN", "SEPARATE",
-              "INVISIBLE", "COURTESY", "CIGARETTE", "OPPOSITE", "AMBIGUITY", "PERSONALITY", "RECORDING", "NEUTRAL", "PUBLISHER", "SOFTWARE"};
+              "INVISIBLE", "COURTESY", "CIGARETTE", "OPPOSITE", "AMBIGUITY", "PERSONALITY", "RECORDING", "NEUTRAL", "PUBLISHER", "SOFTWARE" };
             Random rng = new Random();
             int word = rng.Next(0, 50);
             return array[word];
@@ -56,7 +56,7 @@ namespace BenchmarkWPF
 
         //public bool Difficulty()
         //{
-            
+
         //}
 
 
@@ -74,12 +74,13 @@ namespace BenchmarkWPF
         {
             if (lives == 0)
             {
-                _sm.UpdateScore(username, score);
+                _sM.UpdateScore(username, score);
                 return true;
             }
-            return false;
+            else
+            {
+                return false;
+            }
         }
-
-
     }
 }

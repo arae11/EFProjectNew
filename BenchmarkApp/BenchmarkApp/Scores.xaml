@@ -46,5 +46,10 @@
                 Background="#801515" 
                 Content="Back" 
                 Click="btnBack_Click" FontFamily="TYPOGRAPH PRO" Foreground="White"/>
+        <ListBox x:Name="ScoreBox" 
+                 Grid.Row="1" 
+                 Grid.RowSpan="13" 
+                 Grid.Column="0" 
+                 Grid.ColumnSpan="12" SelectionChanged="ScoreBox_SelectionChanged" />
     </Grid>
 </Window>
