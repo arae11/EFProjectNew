@@ -3,115 +3,117 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:BenchmarkWPF"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        WindowState="Maximized"
-        Title="HomePage" Height="1920" Width="1080">
+        WindowStartupLocation="CenterScreen"
+        Title="HomePage" 
+        Width="350"
+        Height="500">
+
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-
-
-        <Button x:Name="btnVisualMemoryEasy" 
-                Grid.Row="4" 
-                Grid.RowSpan="5" 
-                Grid.Column="1" 
-                Grid.ColumnSpan="5" 
+        <Rectangle 
+            Height="500" 
+            VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush 
+                    EndPoint="0.5,1" 
+                    StartPoint="0.5,0">
+                    <GradientStop 
+                        Color="#FF2281D1"/>
+                    <GradientStop 
+                        Color="#FF34268A" 
+                        Offset="1"/>
+                    <GradientStop 
+                        Color="#FF33288B" 
+                        Offset="0.546"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        
+        <StackPanel 
+            Margin="20">
+        <Label 
+            Content="SELECT DIFFICULTY" 
+            Foreground="White" 
+            FontSize="30" 
+            FontFamily="Champagne &amp; Limousines" 
+            HorizontalAlignment="Center"/>
+            
+            <Separator></Separator>
+            
+            <Button 
+                Name="btnVisualMemoryEasy" 
+                Click="btnEasy_Click" 
+                Content="EASY" 
+                Margin="30 20" 
+                Background="#FF2281D1" 
+                Foreground="White" 
+                FontFamily="Champagne &amp; Limousines" 
+                FontSize="18"/>
+            <Button
+                Name="btnVisualMemoryHard" 
+                Click="btnHard_Click" 
+                Content="HARD" 
+                Margin="30 10"
+                Background="#FF2281D1" 
+                Foreground="White" 
+                FontFamily="Champagne &amp; Limousines" 
+                FontSize="18"/>
+            
+            <StackPanel>
+                <Grid>
+                    <Rectangle 
+                Width="280" 
+                Height="150" 
+                VerticalAlignment="Bottom"
+                Margin="0,0" 
+                RadiusY="10" 
+                RadiusX="10" 
+                Fill="White">
+                        <Rectangle.Effect>
+                            <DropShadowEffect 
+                            BlurRadius="15" 
+                            Direction="0" 
+                            RenderingBias="Quality" 
+                            ShadowDepth="1" 
+                            Color="#FFBBBBBB"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <TextBlock
+                x:Name="tblInstructions"
+                FontSize="16"
+                Padding="5"
+                FontFamily="Champagne &amp; Limousines" 
+                Foreground="#FF2281D1"
+                TextAlignment="Center"
+                TextWrapping="WrapWithOverflow"
+                Width="280" 
+                Height="150"
+                Text="Press 'New' if the word on the screen hasn't appeared before&#xA;&#xA;Press 'Seen' if the word has appeared before&#xA;&#xA;If you press the wrong answer 3 times the game is over."/>
+                </Grid>
+            </StackPanel>
+            
+            <Button
+                Name="btnScores" 
+                Click="btnScores_Click" 
+                Content="SCORES" 
+                Margin="30 10"
+                Background="#028A0F" 
+                Foreground="White" 
+                FontFamily="Champagne &amp; Limousines" 
+                FontSize="18"/>
+            <Button
+                Name="btnLogout" 
+                Click="btnLogout_Click" 
+                Content="LOGOUT" 
+                Margin="30 10"
                 Background="#801515" 
-                Content="Easy" 
-                Click="btnEasy_Click" FontFamily="TYPOGRAPH PRO" Foreground="White" Margin="0,31,61,0"/>
-
-        <Button x:Name="btnVisualMemoryHard" 
-                Grid.Row="4" 
-                Grid.RowSpan="5"
-                Grid.Column="7" 
-                Grid.ColumnSpan="5" 
-                Background="#801515" 
-                Content="Hard" 
-                Click="btnHard_Click" FontFamily="TYPOGRAPH PRO" Foreground="White" Margin="61,31,0,0"/>
-
-        <TextBox x:Name="tbxDifficulty" 
-                 Grid.Row="1" 
-                 Grid.RowSpan="3" 
-                 Grid.Column="3" 
-                 Grid.ColumnSpan="7" 
-                 FontSize="18" 
-                 TextAlignment="Center" 
-                 HorizontalContentAlignment="Center"
-                 VerticalContentAlignment="Center"
-                 Text="Select Difficulty"
-                 FontFamily="TYPOGRAPH PRO"
-                 Background="#FFDCD0D0" Margin="0,31,0,0"  />
-
-        <TextBox x:Name="tbxInstructions" 
-                 Grid.Row="9" 
-                 Grid.RowSpan="2" 
-                 Grid.Column="2" 
-                 Grid.ColumnSpan="8" 
-                 FontSize="18" 
-                 TextAlignment="Center" 
-                 HorizontalContentAlignment="Center"
-                 VerticalContentAlignment="Center"
-                 Text="Instructions:"
-                 FontFamily="TYPOGRAPH PRO"
-                 Background="#FFDCD0D0" Margin="61,31,0,0"  />
-
-        <Button x:Name="btnLogout" 
-                Grid.Row="0" 
-                Grid.Column="0" 
-                Grid.ColumnSpan="2" 
-                Background="#801515" 
-                Content="Logout" 
-                Click="btnLogout_Click" FontFamily="TYPOGRAPH PRO" Foreground="White"/>
-
-        <Button x:Name="btnScores" 
-                Grid.Row="0" 
-                Grid.Column="11" 
-                Grid.ColumnSpan="2" 
-                Background="#801515" 
-                Content="Scores" 
-                Click="btnScores_Click" FontFamily="TYPOGRAPH PRO" Foreground="White"/>
-
-        <TextBlock x:Name="tbxInstructionsDescription" 
-            Grid.Row="10" 
-            Grid.RowSpan="3" 
-            Grid.Column="2" 
-            Grid.ColumnSpan="8" 
-            FontSize="16" 
-            TextAlignment="Center"
-            TextWrapping="WrapWithOverflow"
-            Text="Press 'New' if the word on the screen hasn't appeared before. Press 'Seen' if it has. If you press the wrong answer 3 times the game is over."
-            FontFamily="TYPOGRAPH PRO"
-            Background="#FFDCD0D0" Margin="61,31,0,0"  />
+                Foreground="White" 
+                FontFamily="Champagne &amp; Limousines" 
+                FontSize="18"/>
+        </StackPanel>
     </Grid>
 </Window>
+

@@ -7,12 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\think.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="4.1.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BenchmarkBusiness\BenchmarkBusiness.csproj" />
     <ProjectReference Include="..\BenchmarkData\BenchmarkData.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\think.png" />
   </ItemGroup>
 
   <ItemGroup>

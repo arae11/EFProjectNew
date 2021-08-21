@@ -5,88 +5,133 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BenchmarkWPF"
         mc:Ignorable="d"
-        Title="VerbalMemoryE" Height="450" Width="800">
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="VerbalMemoryE" 
+        Width="350"
+        Height="500">
+   
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
+        <Rectangle 
+            Height="500" 
+            VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush 
+                    EndPoint="0.5,1" 
+                    StartPoint="0.5,0">
+                    <GradientStop 
+                        Color="#FF2281D1"/>
+                    <GradientStop 
+                        Color="#FF34268A" 
+                        Offset="1"/>
+                    <GradientStop 
+                        Color="#FF33288B" 
+                        Offset="0.546"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <StackPanel 
+            Margin="20">
+            <Grid>
+                <Label 
+                x:Name="lblLives"
+                Content="Lives: 3"
+                Margin="30 20" 
+                Foreground="White" 
+                Background="#FF2281D1" 
+                FontFamily="Champagne &amp; Limousines" 
+                FontSize="18"
+                HorizontalAlignment="Left"
+                Height="30"
+                Width="80"
+                HorizontalContentAlignment="Center"
+                />
+                <Label 
+                x:Name="lblScore"
+                Content="Score: 0"
+                Margin="30 20" 
+                Foreground="White" 
+                Background="#FF2281D1" 
+                FontFamily="Champagne &amp; Limousines" 
+                FontSize="18"
+                HorizontalAlignment="Right" 
+                Height="30"
+                Width="80"
+                HorizontalContentAlignment="Center"
+                />
+            </Grid>
 
-        <Button x:Name="btnBack" 
-                Grid.Row="0" 
-                Grid.Column="0" 
-                Grid.ColumnSpan="2" 
+            <StackPanel>
+                <Grid>
+                    <Rectangle 
+            Width="280" 
+            Height="150" 
+            VerticalAlignment="Bottom"
+            Margin="0,0" 
+            RadiusY="10" 
+            RadiusX="10" 
+            Fill="White">
+                        <Rectangle.Effect>
+                            <DropShadowEffect 
+                    BlurRadius="15" 
+                    Direction="0" 
+                    RenderingBias="Quality" 
+                    ShadowDepth="1" 
+                    Color="#FFBBBBBB"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <Label
+                Name="lblWord"
+                FontSize="32"
+                FontFamily="Champagne &amp; Limousines"
+                Foreground="#FF2281D1"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Height="140"
+                BorderThickness="0"
+                Width="290"/>
+                </Grid>
+            </StackPanel>
+            <Grid>
+                <Button 
+                Name="btnNew" 
+                Click="btnNew_Click" 
+                Content="NEW" 
+                Margin="30 20" 
+                Background="#FF2281D1" 
+                Foreground="White" 
+                FontFamily="Champagne &amp; Limousines" 
+                FontSize="18"
+                Height="40"
+                Width="100"
+                HorizontalAlignment="Right"/>
+                <Button
+                Name="btnSeen" 
+                Click="btnSeen_Click" 
+                Content="SEEN" 
+                Margin="30 20"
+                Background="#FF2281D1" 
+                Foreground="White" 
+                FontFamily="Champagne &amp; Limousines" 
+                FontSize="18"
+                Height="40"
+                Width="100"
+                HorizontalAlignment="Left" 
+                />
+            </Grid>
+
+            <Button
+                Name="btnBack" 
+                Click="btnBack_Click" 
+                Content="BACK" 
+                Margin="30 80"
                 Background="#801515" 
-                Content="Back" 
-                Click="btnBack_Click" FontFamily="TYPOGRAPH PRO" Foreground="White"/>
-        <Button x:Name="btnSeen" 
-                Grid.Row="9" 
-                Grid.Column="1" 
-                Grid.ColumnSpan="4" 
-                Background="#801515" 
-                Content="Seen" 
-                Click="btnSeen_Click" FontFamily="TYPOGRAPH PRO" Foreground="White" Margin="66,31,0,0" Grid.RowSpan="3"/>
-        <Button x:Name="btnNew" 
-                Grid.Row="9" 
-                Grid.Column="6" 
-                Grid.ColumnSpan="5" 
-                Background="#801515" 
-                Content="New" 
-                Click="btnNew_Click" FontFamily="TYPOGRAPH PRO" Foreground="White" Margin="66,31,66,0" Grid.RowSpan="3"/>
-        <TextBox x:Name="tbxWord" 
-                 Grid.Row="4" 
-                 Grid.RowSpan="5" 
-                 Grid.Column="1" 
-                 Grid.ColumnSpan="10" 
-                 FontSize="18" 
-                 TextAlignment="Center" 
-                 HorizontalContentAlignment="Center"
-                 VerticalContentAlignment="Center"
-                 Background="#FFDCD0D0" Margin="66,31,66,0" 
-                 TextChanged="tbxWord_TextChanged"/>
-        <Label x:Name="lblScore" 
-                 Grid.RowSpan="3" 
-                 Grid.Column="7" 
-                 Grid.ColumnSpan="4" 
-                 FontSize="18" 
-                 HorizontalContentAlignment="Center"
-                 VerticalContentAlignment="Center"
-                 Content="Score: 0"
-                 Background="#FFDCD0D0" Margin="0,31,66,0" Grid.Row="1" />
-        <Label x:Name="lblLives" 
-            Grid.RowSpan="3" 
-            Grid.Column="1" 
-            Grid.ColumnSpan="5" 
-            FontSize="18" 
-            HorizontalContentAlignment="Center"
-            VerticalContentAlignment="Center"
-            Content="Lives: 3"
-            Background="#FFDCD0D0" Margin="66,31,66,0" Grid.Row="1" />
+                Foreground="White" 
+                FontFamily="Champagne &amp; Limousines" 
+                FontSize="14"
+                HorizontalAlignment="Center"
+                Height="40"
+                Width="80"/>
+        </StackPanel>
     </Grid>
 </Window>

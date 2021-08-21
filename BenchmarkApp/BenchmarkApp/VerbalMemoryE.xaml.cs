@@ -55,7 +55,7 @@ namespace BenchmarkWPF
             username = UserManager.CurrentUsername;
             _vMM = new VerbalMemoryManager();
             _sM = new ScoreManager();
-            tbxWord.Text = _vMM.NewWordEasy();
+            lblWord.Content = _vMM.NewWordEasy();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -65,7 +65,7 @@ namespace BenchmarkWPF
 
         private void btnSeen_Click(object sender, RoutedEventArgs e)
         {
-            if (_vMM.seenWords.Contains(tbxWord.Text))
+            if (_vMM.seenWords.Contains(lblWord.Content))
             {
                 _vMM.IncreaseScore();
             }
@@ -73,7 +73,7 @@ namespace BenchmarkWPF
             {
                 _vMM.DecreaseLives();
             }
-            tbxWord.Text = _vMM.NewWordEasy();
+            lblWord.Content = _vMM.NewWordEasy();
             lblScore.Content = $"Score: {_vMM.score}";
             lblLives.Content = $"Lives: {_vMM.lives}";
             GameOver(username);
@@ -81,7 +81,7 @@ namespace BenchmarkWPF
 
         private void btnNew_Click(object sender, RoutedEventArgs e)
         {
-            if (!_vMM.seenWords.Contains(tbxWord.Text))
+            if (!_vMM.seenWords.Contains(lblWord.Content))
             {
                 _vMM.IncreaseScore();
             }
@@ -89,16 +89,12 @@ namespace BenchmarkWPF
             {
                 _vMM.DecreaseLives();
             }
-            _vMM.seenWords.Add(tbxWord.Text);
-            tbxWord.Text = _vMM.NewWordEasy();
+            _vMM.seenWords.Add((string)lblWord.Content);
+            lblWord.Content = _vMM.NewWordEasy();
             lblScore.Content = $"Score: {_vMM.score}";
             lblLives.Content = $"Lives: {_vMM.lives}";
             GameOver(username);
         }
 
-        private void tbxWord_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

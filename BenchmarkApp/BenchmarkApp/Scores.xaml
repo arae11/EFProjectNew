@@ -6,72 +6,110 @@
         xmlns:local="clr-namespace:BenchmarkWPF"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        WindowState="Maximized"
-        Title="Scores" Height="1920" Width="1080">
+        WindowStartupLocation="CenterScreen"
+        Title="Scores" 
+        Width="350"
+        Height="500">
 
+    <Grid>
+        <Rectangle 
+            Height="500" 
+            VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush 
+                    EndPoint="0.5,1" 
+                    StartPoint="0.5,0">
+                    <GradientStop 
+                        Color="#FF2281D1"/>
+                    <GradientStop 
+                        Color="#FF34268A" 
+                        Offset="1"/>
+                    <GradientStop 
+                        Color="#FF33288B" 
+                        Offset="0.546"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
 
+        <StackPanel>
 
-
-    <!--<StackPanel>
-        <Button x:Name="btnBack" 
+            <Separator></Separator>
+            <Label 
+            Content="LEADERBOARD" 
+            Foreground="White" 
+            FontSize="28" 
+            FontFamily="Champagne &amp; Limousines" 
+            HorizontalAlignment="Center"/>
+            <Separator></Separator>
+            <StackPanel>
+                <Grid>
+                    <Rectangle 
+                        Width="280" 
+                        Height="335" 
+                        VerticalAlignment="Bottom"
+                        Margin="0,10,0,20" 
+                        RadiusY="10" 
+                        RadiusX="10" 
+                        Fill="White">
+                        <Rectangle.Effect>
+                            <DropShadowEffect 
+                                BlurRadius="15" 
+                                Direction="0" 
+                                RenderingBias="Quality" 
+                                ShadowDepth="1" 
+                                Color="#FFBBBBBB"/>
+                        </Rectangle.Effect>
+                    </Rectangle>
+                    <ListView 
+                        Margin="0,10,0,60" 
+                        Height="300" 
+                        HorizontalAlignment="Center" 
+                        HorizontalContentAlignment="Stretch"
+                        Name="ScoreBox" 
+                        Width="280" 
+                        FontSize="12"
+                        VerticalAlignment="Center">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter 
+                                    Property="HorizontalContentAlignment" 
+                                    Value="Stretch">
+                                </Setter>
+                                <Setter 
+                                    Property="VerticalContentAlignment" 
+                                    Value="Stretch">
+                                </Setter>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.View>
+                            <GridView
+                                x:Name="GridView1">
+                                <GridViewColumn 
+                                    DisplayMemberBinding="{Binding Path=Username}" 
+                                    Header="User&#xA;Name"
+                                    Width="auto"/>
+                                <GridViewColumn 
+                                    DisplayMemberBinding="{Binding Path=NewScore}" 
+                                    Header="Latest&#xA;Score" 
+                                    Width="auto"/>
+                                <GridViewColumn 
+                                    DisplayMemberBinding="{Binding Path=HighScore}" 
+                                    Header="High&#xA;Score" 
+                                    Width="auto"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </StackPanel>
+            <Button x:Name="btnBack" 
                 Background="#801515" 
                 Content="Back" 
-                Click="btnBack_Click" FontFamily="TYPOGRAPH PRO" Foreground="White" Height="70"/>
-        <Separator/>
-        <Label x:Name="Leaderboard" Foreground="Black" FontFamily="TYPOGRAPH PRO" />
-        <Grid Height="59">
-            <ListBox x:Name="ScoreBox" Grid.Column="0" SelectionChanged="ScoreBox_SelectionChanged" Margin="0,66,0,0" />
-        </Grid>
-    </StackPanel>-->
-
-
-    <!--<ListView HorizontalAlignment="Center" VerticalAlignment="Top" Name="ScoreBox">
-        <ListView.View>
-            <GridView AllowsColumnReorder="true"
-              ColumnHeaderToolTip="Leaderboard">
-                <GridViewColumn DisplayMemberBinding=
-                          "{Binding Path=Username}" 
-                      Header="Username" Width="200"/>
-
-                <GridViewColumn DisplayMemberBinding=
-                          "{Binding Path=Newscore}" 
-                      Header="Latest Score" Width="200"/>
-
-                <GridViewColumn DisplayMemberBinding=
-                          "{Binding Path=Highscore}" 
-                      Header="High Score" Width="200"/>
-            </GridView>
-        </ListView.View>
-    </ListView>-->
-    <StackPanel>
-        <Button x:Name="btnBack" 
-                Background="#801515" 
-                Content="Back" 
-                Click="btnBack_Click" FontFamily="TYPOGRAPH PRO" Foreground="White" Height="30" Width="50" HorizontalAlignment="Right"/>
-        <Separator></Separator>
-        <Label Content="Leaderboard" 
-               Foreground="Black" 
-               FontSize="25" 
-               FontFamily="TYPOGRAPH PRO"
-               HorizontalAlignment="Center"/>
-        <Separator></Separator>
-        <ListView Margin="0,10,0,0" 
-                  Height="342" 
-                  HorizontalAlignment="Center" 
-                  Name="ScoreBox" Width="600">
-            <ListView.View>
-                <GridView x:Name="GridView1">
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Username}" 
-                                    Header="Username" 
-                                    Width="200"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=NewScore}" 
-                                    Header="Latest Score" 
-                                    Width="200"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=HighScore}" 
-                                    Header="Highscore" 
-                                    Width="200"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-    </StackPanel>
+                Click="btnBack_Click" 
+                FontFamily="Champagne &amp; Limousines"  
+                Foreground="White" 
+                Height="30" 
+                Width="80" 
+                HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
 </Window>
