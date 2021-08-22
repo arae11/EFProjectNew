@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BenchmarkBusiness\BenchmarkBusiness.csproj" />
     <ProjectReference Include="..\BenchmarkData\BenchmarkData.csproj" />
   </ItemGroup>
 

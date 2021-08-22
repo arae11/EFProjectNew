@@ -65,7 +65,5 @@ namespace BenchmarkBusiness
                 return scoreQuery.ToList();
             }
         }
-
-
     }
 }

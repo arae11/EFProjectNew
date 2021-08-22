@@ -19,7 +19,8 @@ namespace BenchmarkBusiness
         {
             using (var db = new BenchmarkContext())
             {
-                return db.Users.ToList();
+                var x = db.Users.ToList();
+                return x;
             }
         }
 
@@ -33,14 +34,14 @@ namespace BenchmarkBusiness
             }
         }
 
-        public bool UpdateUser(int userId, string username, string password)
+        public bool UpdateUser(string username, string password)
         {
             using (var db = new BenchmarkContext())
             {
-                var user = db.Users.Where(u => u.UserId == userId).FirstOrDefault();
+                var user = db.Users.Where(u => u.Username == username).FirstOrDefault();
                 if (user == null)
                 {
-                    Debug.WriteLine($"User {userId} not found");
+                    Debug.WriteLine($"User {username} not found");
                     return false;
                 }
                 user.Username = username;
@@ -53,21 +54,21 @@ namespace BenchmarkBusiness
                 }
                 catch (Exception e)
                 {
-                    Debug.WriteLine($"Error updating {userId}");
+                    Debug.WriteLine($"Error updating {username}");
                     return false;
                 }
             }
             return true;
         }
 
-        public bool DeleteUser(int userId)
+        public bool DeleteUser(string username)
         {
             using (var db = new BenchmarkContext())
             {
-                var user = db.Users.Where(u => u.UserId == userId).FirstOrDefault();
+                var user = db.Users.Where(u => u.Username == username).FirstOrDefault();
                 if (user == null)
                 {
-                    Debug.WriteLine($"User {userId} not found");
+                    Debug.WriteLine($"User {username} not found");
                     return false;
                 }
                 db.Users.RemoveRange(user);
