@@ -98,7 +98,7 @@
             <Button
                 Name="btnScores" 
                 Click="btnScores_Click" 
-                Content="SCORES" 
+                Content="LEADERBOARD" 
                 Margin="30 10"
                 Background="#028A0F" 
                 Foreground="White" 
