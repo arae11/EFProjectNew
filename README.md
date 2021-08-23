@@ -46,8 +46,8 @@
 - Most of the databases have been created and linked.
 
 #### Sprint Board
-> - Before: ![Start of Sprint 1](Sprint 1/Sprint 1 start.png)
-> - After: ![End of Sprint 1](Sprint 1/sprint 1 end.png)
+> - Before: ![Start of Sprint 1](C:\Users\Alex Rae\Documents\Sparta\Scrum Boards\Sprint 1\Sprint 1\Sprint 1 start.png)
+> - After: ![End of Sprint 1](C:\Users\Alex Rae\Documents\Sparta\Scrum Boards\Sprint 1\Sprint 1\sprint 1 end.png)
 
 
 ### Sprint 2
@@ -73,8 +73,8 @@
 - The tasks have been moved to review as the code to test it hasn't been completed yet.
 
 #### Sprint Board
-> - Before: ![Start of Sprint 1](Sprint 2/sprint 2 start.png)
-> - After: ![End of Sprint 1](Sprint 2/sprint 2 end.png)
+> - Before: ![Start of Sprint 1](C:\Users\Alex Rae\Documents\Sparta\Scrum Boards\Sprint 2\Sprint 2\sprint 2 start.png)
+> - After: ![End of Sprint 1](C:\Users\Alex Rae\Documents\Sparta\Scrum Boards\Sprint 2Sprint 2\sprint 2 end.png)
 
 
 ### Sprint 3
@@ -92,8 +92,8 @@
 - When taken to the leaderboard nothing is displayed.
 
 #### Sprint Board
-> - Before: ![Start of Sprint 1](Sprint 3/sprint 3 start.png)
-> - After: ![End of Sprint 1](Sprint 3/sprint 3 end.png)
+> - Before: ![Start of Sprint 1](C:\Users\Alex Rae\Documents\Sparta\Scrum Boards\Sprint 3\Sprint 3\sprint 3 start.png)
+> - After: ![End of Sprint 1](C:\Users\Alex Rae\Documents\Sparta\Scrum Boards\Sprint 3\Sprint 3\sprint 3 end.png)
 
 ### Sprint 4
 #### Sprint Goal
@@ -108,8 +108,8 @@
 - Leaderboard is correctly showing the intended information however there is zero frontend completed for it making it currently unusable.
 
 #### Sprint Board
-> - Before: ![Start of Sprint 1](Sprint 4/sprint 4 start.png)
-> - After: ![End of Sprint 1](Sprint 4/sprint 4 end.png)
+> - Before: ![Start of Sprint 1](C:\Users\Alex Rae\Documents\Sparta\Scrum Boards\Sprint 4\Sprint 4\sprint 4 start.png)
+> - After: ![End of Sprint 1](C:\Users\Alex Rae\Documents\Sparta\Scrum Boards\Sprint 4\Sprint 4\sprint 4 end.png)
 
 
 ### Sprint 5
@@ -130,8 +130,8 @@
 - The final sprint will allow me to overhaul the front end and make it a usable product.
 
 #### Sprint Board
-> - Before: ![Start of Sprint 1](Sprint 5/sprint 5 start.png)
-> - After: ![End of Sprint 1](Sprint 5/sprint 5 end.png)
+> - Before: ![Start of Sprint 1](C:\Users\Alex Rae\Documents\Sparta\Scrum Boards\Sprint 5\Sprint 5\sprint 5 start.png)
+> - After: ![End of Sprint 1](C:\Users\Alex Rae\Documents\Sparta\Scrum Boards\Sprint 5\Sprint 5\sprint 5 end.png)
 
 
 ### Sprint 6
@@ -149,7 +149,7 @@
   > The column headers are centred however the contents are not. I spent hours trying to fix this but could not find a solution.
 
 #### Sprint Board
-> - Before: ![Start of Sprint 1](Sprint 6/sprint 6 start.png)
-> - After: ![End of Sprint 1](Sprint 6/sprint 6 end.png)
+> - Before: ![Start of Sprint 1](C:\Users\Alex Rae\Documents\Sparta\Scrum Boards\Sprint 6\Sprint 6\sprint 6 start.png)
+> - After: ![End of Sprint 1](C:\Users\Alex Rae\Documents\Sparta\Scrum Boards\Sprint 6\Sprint 6\sprint 6 end.png)
 
 
