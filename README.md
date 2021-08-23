@@ -16,7 +16,8 @@
 - Code has been documented and pushed to GitHub
 
 ## Class Diagrams
-
+![class diagram](https://user-images.githubusercontent.com/60930006/130411392-e273b491-e131-42a4-b12d-a02b17fea4e6.png)
+![class diagram2](https://user-images.githubusercontent.com/60930006/130411609-85188f25-4618-4722-9272-2ea69171783a.png)
 
 
 ## Project Retrospective
